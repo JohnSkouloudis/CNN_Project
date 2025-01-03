@@ -21,7 +21,8 @@ class COVID19Dataset(Dataset):
                 self.image_paths.append(image_path)
                 self.labels.append(idx)
 
-
+    def __len__(self):
+        return len(self.image_paths)
 
     def __getitem__(self,idx):
         img_path = self.image_paths[idx]
@@ -75,8 +76,14 @@ def plot_bar_diagram(dataset):
 
 
 
-
+# Zhtoumeno 1
 if __name__ == '__main__':
+
+    img = Image.open('COVID-19_Radiography_Dataset/COVID/COVID-1.png')
+    width, height = img.size
+    print(f"Image dimensions: {width} x {height}")
+    
+
     dataset = COVID19Dataset('COVID-19_Radiography_Dataset',transform=None)
     random_indexes = random.sample(range(len(dataset.image_paths)),25)
     dataset.display_batch(random_indexes)
