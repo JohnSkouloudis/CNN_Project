@@ -32,7 +32,7 @@ if __name__ == "__main__":
         train_ds, val_ds, test_ds = random_split(dataset, [0.6, 0.2, 0.2], generator=generator)
     
         batch_size = 64
-        epochs = 5
+        epochs = 3
     
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
