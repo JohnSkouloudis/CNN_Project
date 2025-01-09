@@ -118,9 +118,9 @@ if __name__ == "__main__":
 
             print(f'Start of Epoch {epoch+1}/{epochs}')
 
-            train_loss, train_accuracy = train_one_epoch(model, train_loader, optimizer, lossfn, device)
+            train_loss, train_accuracy = train_one_epoch(resnet50, train_loader, optimizer, lossfn, device)
 
-            val_loss, val_accuracy, _ = test(model, val_loader, lossfn, device)
+            val_loss, val_accuracy, _ = test(resnet50, val_loader, lossfn, device)
 
             print(f'End of Epoch {epoch+1}/{epochs}')
             print(f'Train Loss: {train_loss:.4f}, Train Accuracy: {train_accuracy:.4f}')
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     
         print("Results of training resNet50 model:")        
         print(f"Duration of training {epochs} epochs: {time.time()- start} seconds")
-        test_loss, test_accuracy, cm = test(model, test_loader, lossfn, device)
+        test_loss, test_accuracy, cm = test(resnet50, test_loader, lossfn, device)
         print(f'Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}') 
    
         print(f"Confusion Matrix: {cm}")

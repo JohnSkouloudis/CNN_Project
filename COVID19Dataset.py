@@ -56,7 +56,7 @@ class COVID19Dataset(Dataset):
         plt.tight_layout()
         plt.show()
     
-def plot_bar_diagram(dataset):
+def plot_bar_diagram(dataset: COVID19Dataset):
     
     class_count = {class_name:0 for class_name in dataset.classes}
 
