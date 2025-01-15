@@ -15,7 +15,7 @@ This project is part of the Machine Learning course, focusing on Convolutional N
 ## Dataset
 The dataset consists of chest X-ray images categorized as:
 - Normal
-- Bacterial Pneumonia
+- Lung Opacity 
 - Viral Pneumonia
 - COVID-19
 
@@ -36,7 +36,7 @@ The dataset is loaded and preprocessed using a custom PyTorch `Dataset` class.
 - **File:** `COVID19dataset.py`
 - Implements the `COVID19Dataset` class.
 - Generates a bar chart showing class distribution.
-- Uses `display_batch` to visualize sample images.
+- Uses `display_batch` to visualize random sample images.
 - **Observation:** The dataset is imbalanced, with "Normal" images dominating.
 
 ### Task 2: Training a Simple CNN (CNN1)
@@ -73,7 +73,7 @@ Install dependencies using:
 pip install torch torchvision numpy matplotlib scikit-learn
 ```
 ## How to Run
-* make sure to change the root_dir parameter if the directory with the dataset is not in the same directory as the project
+* make sure to change the root_dir parameter in the COVID19Dataset object if the directory with the dataset is not in the same directory as the project
   
 ### Task 1
 ```sh
